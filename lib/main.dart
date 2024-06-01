@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:to_do_app/core/theme/theme.dart';
+import 'package:to_do_app/features/home/view/home_view.dart';
 
 void main() {
   runApp(
@@ -18,6 +19,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ref.watch(themeProvider),
+      home: const HomeView(),
     );
   }
 }
