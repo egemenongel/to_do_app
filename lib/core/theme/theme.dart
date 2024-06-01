@@ -37,15 +37,24 @@ class AppTheme {
         foregroundColor: white,
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
-        style: ButtonStyle(
-          shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(4),
-                ),
-                side: BorderSide(
-                  color: tertiaryColor,
-                )),
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(4),
+              ),
+              side: BorderSide(
+                color: tertiaryColor,
+              )),
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: white,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(6),
+            ),
           ),
         ),
       ),

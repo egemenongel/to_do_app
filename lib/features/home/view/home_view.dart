@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:to_do_app/core/config/router.dart';
 import 'package:to_do_app/core/extensions/context_extensions.dart';
 import 'package:to_do_app/features/providers/todo_provider.dart';
 
@@ -30,7 +33,9 @@ class HomeView extends StatelessWidget {
         child: _Todos(),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => unawaited(
+          const AddTodoRoute().push(context),
+        ),
         shape: const CircleBorder(),
         child: const Icon(
           Icons.add,
