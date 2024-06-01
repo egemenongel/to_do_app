@@ -36,6 +36,19 @@ class AppTheme {
         backgroundColor: primaryColor,
         foregroundColor: white,
       ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStatePropertyAll(
+            RoundedRectangleBorder(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(4),
+                ),
+                side: BorderSide(
+                  color: tertiaryColor,
+                )),
+          ),
+        ),
+      ),
     );
   }
 }
