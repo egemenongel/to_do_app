@@ -76,7 +76,9 @@ class _Todos extends ConsumerWidget {
                       ),
                       const Spacer(),
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () => unawaited(
+                          EditTodoRoute(id: e.id!).push(context),
+                        ),
                         child: const Text('Edit'),
                       )
                     ],

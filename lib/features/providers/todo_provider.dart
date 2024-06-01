@@ -52,4 +52,18 @@ class TodoNotifier extends _$TodoNotifier {
           todo,
     ];
   }
+
+  void edit(String id, String name) {
+    state = [
+      for (final todo in state)
+        if (todo.id == id)
+          Todo(
+            id: todo.id,
+            isCompleted: todo.isCompleted,
+            name: name,
+          )
+        else
+          todo,
+    ];
+  }
 }

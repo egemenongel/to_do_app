@@ -59,16 +59,18 @@ extension $AddTodoRouteExtension on AddTodoRoute {
 }
 
 RouteBase get $editTodoRoute => GoRouteData.$route(
-      path: '/editTodo',
+      path: '/editTodo:id',
       name: 'editTodo',
       factory: $EditTodoRouteExtension._fromState,
     );
 
 extension $EditTodoRouteExtension on EditTodoRoute {
-  static EditTodoRoute _fromState(GoRouterState state) => const EditTodoRoute();
+  static EditTodoRoute _fromState(GoRouterState state) => EditTodoRoute(
+        id: state.pathParameters['id']!,
+      );
 
   String get location => GoRouteData.$location(
-        '/editTodo',
+        '/editTodo${Uri.encodeComponent(id)}',
       );
 
   void go(BuildContext context) => context.go(location);

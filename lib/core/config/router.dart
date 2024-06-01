@@ -32,10 +32,12 @@ class AddTodoRoute extends GoRouteData {
       const AddTodoView();
 }
 
-@TypedGoRoute<EditTodoRoute>(path: '/editTodo', name: 'editTodo')
+@TypedGoRoute<EditTodoRoute>(path: '/editTodo:id', name: 'editTodo')
 class EditTodoRoute extends GoRouteData {
-  const EditTodoRoute();
+  final String id;
+  const EditTodoRoute({required this.id});
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const EditTodoView();
+  Widget build(BuildContext context, GoRouterState state) => EditTodoView(
+        id: id,
+      );
 }
