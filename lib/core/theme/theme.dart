@@ -11,6 +11,7 @@ ThemeData theme(ThemeRef ref) {
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
+      fontFamily: 'Roboto',
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: Color(0xff3556AB),
