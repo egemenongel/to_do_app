@@ -9,20 +9,32 @@ ThemeData theme(ThemeRef ref) {
 }
 
 class AppTheme {
+  static Color primaryColor = const Color(0xff3556AB);
+  static Color secondaryColor = const Color(0xffCDE53D);
+  static Color tertiaryColor = const Color(0xff071D55);
+  static Color surfaceColor = const Color(0xfff3f3f3);
+  static Color white = Colors.white;
+  static Color black = Colors.black;
+  static Color errorColor = Colors.red;
+
   static ThemeData get lightTheme {
     return ThemeData(
       fontFamily: 'Roboto',
-      colorScheme: const ColorScheme(
+      colorScheme: ColorScheme(
         brightness: Brightness.light,
-        primary: Color(0xff3556AB),
-        onPrimary: Colors.white,
-        secondary: Color(0xff9EB031),
-        onSecondary: Colors.red,
-        error: Colors.red,
-        onError: Colors.white,
-        surface: Color(0xfff3f3f3),
-        onSurface: Colors.black,
-        tertiary: Color(0xff071D55),
+        primary: primaryColor,
+        onPrimary: white,
+        secondary: secondaryColor,
+        onSecondary: white,
+        error: errorColor,
+        onError: white,
+        surface: surfaceColor,
+        onSurface: black,
+        tertiary: tertiaryColor,
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: primaryColor,
+        foregroundColor: white,
       ),
     );
   }
